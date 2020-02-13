@@ -6,9 +6,10 @@ const fetch = require('node-fetch');
 // make dotenv available (environmental variables)
 require('dotenv').config();
 
-// Listening in Port 3000
+// Listening at Port
 const app = express();
-app.listen(3000, console.log('listening at 3000'));
+const port = process.env.PORT || 3000;
+app.listen(port, console.log(`listening at ${port}`));
 // Hosting Static Pages in "public"
 app.use(express.static('public'));
 // Parses incomming request with json
